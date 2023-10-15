@@ -6,9 +6,11 @@ local Util = require("lazyvim.util")
 
 local map = Util.safe_keymap_set
 
-map("n", "J", "5j")
-map("x", "J", "5j")
-map("n", "K", "5k")
-map("x", "K", "5k")
+--- J equals 5j, K equals 5k, move cursor faster
+map("x", "J", "5j", { desc = "move 5 lines up" })
+map("n", "J", "5j", { desc = "move 5 lines up" })
+map("n", "K", "5k", { desc = "move 5 lines down" })
+map("x", "K", "5k", { desc = "move 5 lines down" })
 
-map("n", "Q", ":q<CR>")
+--- Q equals quit file, quit faster
+map("n", "Q", ":q<CR>", { desc = "quit file" })
